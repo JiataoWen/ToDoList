@@ -17,7 +17,7 @@ class ToDoListViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let items = defaults.array(forKey: "ToDoListArray") as? [String] {
+        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
             itemArray = items
         }
         
@@ -69,11 +69,13 @@ class ToDoListViewController: UITableViewController {
                 self.defaults.set(self.itemArray, forKey: "TodoListArray")
                 
                 self.tableView.reloadData()
+                
+                print("add item success")
             }
             
             
             
-            print("add item success")
+            
         }
         
         alert.addTextField { (alertTextField) in
